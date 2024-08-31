@@ -19,7 +19,8 @@ import OrderView from '../views/AdminHome/OrderView.vue'
 import ListOfUsersView from '../views/AdminHome/ListOfUsersView.vue'
 import TicketView from '../views/AdminHome/TicketView.vue'
 import OptionsView from '../views/AdminHome/OptionsView.vue'
-
+import OfferSingleView from '../views/AdminHome/OfferSingleView.vue'
+import BlogHomeView from '../views/AdminHome/BlogHomeView.vue'
 
 
 const router = createRouter({
@@ -108,6 +109,11 @@ const router = createRouter({
           component: OrderView 
         },
         {
+          path: '/blog',
+          name: 'blog',
+          component: BlogHomeView 
+        },
+        {
           path: '/listofusers',
           name: 'listofusers',
           component: ListOfUsersView 
@@ -126,6 +132,11 @@ const router = createRouter({
           path: 'singleuser/:uuid/',
           name: 'singleuser',
           component: SingleUserView
+        },
+        {
+          path: 'offersingle/:session/:acceptance',
+          name: 'offersingle',
+          component: OfferSingleView
         }
       ]
     }

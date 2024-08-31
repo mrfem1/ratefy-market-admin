@@ -12,6 +12,7 @@ const toast = useToast();
 const result = ref();
 
 const show = (id) => { toast.add({ severity: 'danger', summary: 'Error', detail: id, life: 60000 }); };
+
 const fetchWallet = async  () => {
     await axios.get('https://staffbased.ratefy.co/sanctum/csrf-cookie');
     const response = await axios({

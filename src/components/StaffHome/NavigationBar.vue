@@ -38,6 +38,7 @@ import { ref } from "vue";
         icon: 'pi pi-megaphone',
         route: '/blog'
     }
+    
  
 ]);
 </script>

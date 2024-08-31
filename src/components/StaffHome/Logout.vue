@@ -16,8 +16,6 @@ import axios from 'axios';
                 console.log(error.response);
             }
         });
-
-        console.log(response);
         auth.resetAdminDetail();
         router.push('/staff');
     }

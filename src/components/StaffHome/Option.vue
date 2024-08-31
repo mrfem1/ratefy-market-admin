@@ -36,7 +36,6 @@
         console.log(error.response)
     });
 
-    console.log(response.data)
     router.go();
     show('Successfull');
     

@@ -25,7 +25,6 @@
     });
 
     walletOptions.value = await JSON.parse(response.data)
-    console.log(walletOptions.value.data.paymentoption)
     wallets.value = walletOptions.value.data.paymentoption;
 }
 

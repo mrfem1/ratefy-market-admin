@@ -1,6 +1,6 @@
 import './assets/main.css';
 
-import { createApp } from 'vue'
+import { createApp, defineAsyncComponent } from 'vue'
 import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config'
 import 'primevue/resources/themes/aura-light-green/theme.css'
@@ -42,15 +42,14 @@ import FileUpload from 'primevue/fileupload';
 import Panel from 'primevue/panel';
 import ProgressSpinner from 'primevue/progressspinner';
 import Listbox from 'primevue/listbox';
+import Skeleton from 'primevue/skeleton';
+import ScrollPanel from 'primevue/scrollpanel';
 import './assets/global.css';
 
 const app = createApp(App)
 app.use(PrimeVue, {unstyled:false,  pt: Tailwind})
-app.use(createPinia())
-app.use(router)
-app.use(ToastService)
 app.component('DataViewLayoutOptions', DataViewLayoutOptions)
-app.component('AutoComplete', AutoComplete)
+app.component('AutoComplete',  AutoComplete)
 app.component('Calendar', Calendar)
 app.component('CascadeSelect', CascadeSelect)
 app.component('Checkbox', Checkbox)
@@ -64,7 +63,6 @@ app.component('Password', Password)
 app.component('Card', Card)
 app.component('Divider', Divider)
 app.component('Toast', Toast)
-app.component('DataView', DataView)
 app.component('DataTable', DataTable)
 app.component('Column', Column)
 app.component('ColumnGroup', ColumnGroup)
@@ -80,4 +78,9 @@ app.component('FileUpload', FileUpload)
 app.component('Panel', Panel)
 app.component('ProgressSpinner', ProgressSpinner)
 app.component('Listbox', Listbox)
+app.component('Skeleton', Skeleton)
+app.component('ScrollPanel ', ScrollPanel )
+app.use(createPinia())
+app.use(router)
+app.use(ToastService)
 app.mount('#app')

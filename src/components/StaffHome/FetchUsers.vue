@@ -5,6 +5,7 @@
     import { useUsersStore } from '../../stores/UsersStore';
     import { useSingleUsersStore } from '../../stores/SingleUserStore';
     import { useRouter } from 'vue-router';
+    import { onMounted } from 'vue';
 
     const auth = useAdminStore();
     const users = useUsersStore();
@@ -20,12 +21,12 @@
         }).catch((error) => {
             console.log(error.resposne)
         });
+  
         users.saveUsersList(JSON.parse(response.data.data));
-        console.log(users.users.data);
         
     }
 
-    fetchUsers();
+    
 
     const view = (data, uuid) => {
 
@@ -34,17 +35,20 @@
         router.push({ name: 'singleuser', params: { uuid : uuid } })
     }
     
+    
     const user = computed({
         
         get() {
-            console.log(users.users.data);
             return Object.values(users.users.data)            
         }  
     })
 
+    onMounted(() => {
+        fetchUsers();
+    });
 </script>
 <template>
-    <DataTable :value="user"  dataKey="id"  :pt="{ tbody: { class: 'text-xs'},  thead: { class: 'text-xs'}, }">
+    <DataTable v-if="user" :value="user"  dataKey="id"  :pt="{ tbody: { class: 'text-xs'},  thead: { class: 'text-xs'}, }">
         <Column field="email" header="email"></Column>
         <Column field="activity.ip_address" header="ip"></Column>
         <Column field="authorization.priviledge" header="priviledge"></Column>
@@ -56,4 +60,9 @@
             </template>
         </Column>
     </DataTable>
+    <div v-else class="w-full xl:w-6/12 p-1">
+        <Skeleton height="2rem"     width="20rem" class="mb-2"></Skeleton>
+        <Skeleton height="2rem"     class="mb-2"></Skeleton>
+        <Skeleton height="2rem"     class="mb-2"></Skeleton>
+    </div>
 </template>
