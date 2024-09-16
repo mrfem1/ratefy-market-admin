@@ -33,8 +33,11 @@ fetchOption();
 <template>
     <Panel v-for="item in wallets" v-bind:key="item.id"  collapsed :pt="{ root: { class: 'text-xs px-10 my-2'}, togglerIcon: { class: 'w-2'}, header: { class: 'rounded py-1' } }">
         <template #header>
-            <div class="flex align-items-center gap-2 py-2">
-                <span  class="font-bold">{{ item.option }}</span>
+            <div class="flex flex-row pt-2 w-full">
+                <span  class="basis-5/6 font-bold">{{ item.option }}</span>
+                <span  class="basis-1/6 float-right font-normal">
+                    <small class="cursor-pointer">Requirement</small> <i class="pi pi-ellipsis-h my-2 mx-2 text-violet-500 cursor-pointer"></i>
+                </span>
             </div>
         </template>
     </Panel>

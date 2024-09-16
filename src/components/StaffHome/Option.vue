@@ -65,7 +65,6 @@
                             trigger: { class: 'text-sm' }
                             }" />
                     </div>
-                    
                     <Button label="Create Options" :pt="{ root: { class: 'w-40 bg-cyan-600 py-0 my-2' }, label: { class: 'text-xs text-white my-0 py-0 mx-2' } }" @click="createOption" />
                 </div>                
             </Fieldset>
