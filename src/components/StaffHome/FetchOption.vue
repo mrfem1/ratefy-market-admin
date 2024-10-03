@@ -36,7 +36,11 @@ fetchOption();
             <div class="flex flex-row pt-2 w-full">
                 <span  class="basis-5/6 font-bold">{{ item.option }}</span>
                 <span  class="basis-1/6 float-right font-normal">
-                    <small class="cursor-pointer">Requirement</small> <i class="pi pi-ellipsis-h my-2 mx-2 text-violet-500 cursor-pointer"></i>
+                    <small class="cursor-pointer">Requirement</small>
+                    <router-link :to="{ name: 'requirements', params: { uuid: item.id } }">
+                        <i class="pi pi-sitemap my-2 mx-2 text-violet-500 cursor-pointer"></i>
+                    </router-link>
+                    
                 </span>
             </div>
         </template>

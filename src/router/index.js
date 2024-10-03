@@ -21,6 +21,7 @@ import TicketView from '../views/AdminHome/TicketView.vue'
 import OptionsView from '../views/AdminHome/OptionsView.vue'
 import OfferSingleView from '../views/AdminHome/OfferSingleView.vue'
 import BlogHomeView from '../views/AdminHome/BlogHomeView.vue'
+import RequirementView from '../views/AdminHome/RequirementView.vue'
 
 
 const router = createRouter({
@@ -137,6 +138,11 @@ const router = createRouter({
           path: 'offersingle/:session/:acceptance',
           name: 'offersingle',
           component: OfferSingleView
+        },
+        {
+          path: '/requirement/:uuid/',
+          name: 'requirements',
+          component: RequirementView 
         }
       ]
     }
