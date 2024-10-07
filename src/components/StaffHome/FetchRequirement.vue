@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+    import { ref } from 'vue';
     import { useAdminStore } from '../../stores/AdminStore';
     import { useRoute } from 'vue-router';
     import axios from 'axios';

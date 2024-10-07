@@ -16,6 +16,17 @@ if (singleGate.value.uuid !== route.params.uuid) {
 }
 
 console.log(singleGate.value);
+
+
+const loading = ref(false);
+
+const load = (uuid) => {
+    loading.value = true;
+    router.push("/trail/"+uuid);
+    // setTimeout(() => {
+    //     loading.value = false;
+    // }, 2000);
+  }
 </script>
 <template>
   <div class="my-5 flex flex-row">
@@ -98,7 +109,7 @@ console.log(singleGate.value);
       class="w-full md:w-5 basis-7/12 align-items-center justify-content-center py-5"
     >
       <Card :pt="{ root: { class: 'bg-white' } }">
-        <template #title>Detail</template>
+        <template #title>Detail  <Button type="button" label="Track" icon="pi pi-search" :loading="loading" @click="load(singleGate.uuid)" class="float-right" :pt="{ root: { class: 'h-8 bg-green-500 px-5'}}" /></template>
         <template #content>
           <div class="w-full flex flex-row">
             <div class="basis-6/12 px-3">

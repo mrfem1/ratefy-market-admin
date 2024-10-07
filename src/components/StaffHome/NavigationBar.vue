@@ -34,9 +34,9 @@ import { ref } from "vue";
         route: '/notification'
     },
     {
-        label: 'Blog',
+        label: 'Audit Rail',
         icon: 'pi pi-megaphone',
-        route: '/blog'
+        route: '/audit'
     }
     
  
