@@ -23,6 +23,7 @@ import OfferSingleView from '../views/AdminHome/OfferSingleView.vue'
 import AuditHomeView from '../views/AdminHome/AuditHomeView.vue'
 import RequirementView from '../views/AdminHome/RequirementView.vue'
 import TrailHomeView from '@/views/AdminHome/TrailHomeView.vue'
+import LoggerTrailHomeView from '@/views/AdminHome/LoggerTrailHomeView.vue'
 
 
 const router = createRouter({
@@ -149,6 +150,11 @@ const router = createRouter({
           path: '/trail/:uuid/',
           name: 'trail',
           component: TrailHomeView 
+        },
+        {
+          path: '/errorlogs',
+          name: 'errorlogs',
+          component: LoggerTrailHomeView 
         }
       ]
     }

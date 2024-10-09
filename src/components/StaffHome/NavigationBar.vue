@@ -37,8 +37,12 @@ import { ref } from "vue";
         label: 'Audit Rail',
         icon: 'pi pi-megaphone',
         route: '/audit'
-    }
-    
+    },
+    {
+        label: 'Log Trail',
+        icon: 'pi pi-megaphone',
+        route: '/errorlogs'
+    },
  
 ]);
 </script>
