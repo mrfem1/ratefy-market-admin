@@ -24,6 +24,7 @@ import AuditHomeView from '../views/AdminHome/AuditHomeView.vue'
 import RequirementView from '../views/AdminHome/RequirementView.vue'
 import TrailHomeView from '@/views/AdminHome/TrailHomeView.vue'
 import LoggerTrailHomeView from '@/views/AdminHome/LoggerTrailHomeView.vue'
+import UserLogHomeView from '@/views/AdminHome/UserLogHomeView.vue'
 
 
 const router = createRouter({
@@ -155,6 +156,11 @@ const router = createRouter({
           path: '/errorlogs',
           name: 'errorlogs',
           component: LoggerTrailHomeView 
+        },
+        {
+          path: '/logs/:uuid',
+          name: 'logs',
+          component: UserLogHomeView
         }
       ]
     }
